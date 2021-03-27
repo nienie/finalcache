@@ -3,7 +3,9 @@ module github.com/nienie/finalcache
 go 1.14
 
 require (
-	github.com/miekg/dns v1.1.41
-	github.com/mitchellh/hashstructure v1.1.0
-	golang.org/x/net v0.0.0-20210316092652-d523dce5a7f4
+	github.com/davecgh/go-spew v1.1.1
+	github.com/golang/protobuf v1.5.1
+	github.com/google/uuid v1.1.1
+	github.com/micro/go-micro/v2 v2.9.1
+	github.com/stretchr/testify v1.4.0
 )

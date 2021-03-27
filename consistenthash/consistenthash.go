@@ -23,8 +23,10 @@ import (
 	"strconv"
 )
 
+//Hash ...
 type Hash func(data []byte) uint32
 
+//Map ...
 type Map struct {
 	hash     Hash
 	replicas int
@@ -32,6 +34,7 @@ type Map struct {
 	hashMap  map[int]string
 }
 
+//New ...
 func New(replicas int, fn Hash) *Map {
 	m := &Map{
 		replicas: replicas,

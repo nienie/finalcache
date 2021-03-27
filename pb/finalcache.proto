@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package finalcachepb;
+
+option go_package = "finalcachepb";
+
+message Result {
+    int32 code = 1;
+    string msg = 2;
+}
+
+message GetRequest {
+    string key = 1;
+}
+
+message GetResponse {
+    Result result = 1;
+    bytes value = 2;
+    int32 ttl = 3;        // time to live，unit seconds
+    bool is_hot_key = 4;
+}
+
+message SetRequest {
+    string key = 1;
+    bytes value = 2;
+    int32 ttl = 3; // time to live, unit seconds
+}
+
+message SetResponse {
+    Result result = 1;
+}
+
+message DelRequest {
+    string key = 1;
+}
+
+message DelResponse {
+    Result result = 1;
+}
+
+service FinalCache {
+
+  rpc Get(GetRequest) returns (GetResponse);
+
+  rpc Set(SetRequest) returns (SetResponse);
+
+  rpc Del(DelRequest) returns (DelResponse);
+}
