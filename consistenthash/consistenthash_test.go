@@ -65,6 +65,24 @@ func TestHashing(t *testing.T) {
 
 }
 
+func TestAddRemoveMembers(t *testing.T) {
+	hash1 := New(10, nil)
+	hash1.Add("server1", "server2", "server3")
+
+	key := "key2"
+	val1 := hash1.Get(key)
+	t.Logf("msg=get from hash1||key=%s||val=%s", key, val1)
+
+	hash2 := New(10, nil)
+	hash2.Add("server2", "server3")
+	val2 := hash2.Get(key)
+	t.Logf("msg=get from hash2||key=%s||val=%s", key, val2)
+
+	hash2.Add("server1", "server4")
+	val2 = hash2.Get(key)
+	t.Logf("msg=get from hash2||key=%s||val=%s", key, val2)
+}
+
 func TestConsistency(t *testing.T) {
 	hash1 := New(1, nil)
 	hash2 := New(1, nil)
