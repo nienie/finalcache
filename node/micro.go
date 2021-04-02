@@ -5,8 +5,8 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/micro/go-micro/v2/registry/mdns"
-	"github.com/micro/go-micro/v2/service"
 	"github.com/micro/go-micro/v2/server"
+	"github.com/micro/go-micro/v2/service"
 	"github.com/micro/go-micro/v2/service/grpc"
 )
 
@@ -31,6 +31,6 @@ func setServerID(id string) service.Option {
 }
 
 //GetServiceName ...
-func GetServiceName(name string) string  {
+func GetServiceName(name string) string {
 	return "finalcache." + name
 }

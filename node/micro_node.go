@@ -11,11 +11,11 @@ import (
 //MicroNode ...
 type MicroNode struct {
 	service service.Service
-	ring *consistenthash.Map
+	ring    *consistenthash.Map
 }
 
 //WhoAmI ...
-func (o *MicroNode) WhoAmI() string  {
+func (o *MicroNode) WhoAmI() string {
 	return o.service.Options().Server.Options().Advertise
 }
 
@@ -52,4 +52,3 @@ func (o *MicroNode) Del(context.Context, *finalcachepb.DelRequest, *finalcachepb
 
 	return nil
 }
-

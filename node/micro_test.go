@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/stretchr/testify/require"
 	finalcachepb "github.com/nienie/finalcache/pb"
 	"github.com/nienie/finalcache/pb/testimp"
+	"github.com/stretchr/testify/require"
 )
 
 func TestService(t *testing.T) {

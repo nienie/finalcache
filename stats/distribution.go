@@ -42,4 +42,3 @@ func NewDistribution(counter *Counter, percentile float64) Distribution {
 		Sum:      histogram.Sum(),
 	}
 }
-

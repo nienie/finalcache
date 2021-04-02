@@ -4,7 +4,6 @@ import finalcachepb "github.com/nienie/finalcache/pb"
 
 //Node ...
 type Node interface {
-
 	finalcachepb.FinalCacheHandler
 
 	//WhoAmI ...
@@ -16,4 +15,3 @@ type Node interface {
 	//Run ...
 	Run() error
 }
-
