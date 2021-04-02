@@ -15,7 +15,7 @@ type access struct {
 
 //Stats ...
 type Stats struct {
-	mu             sync.Mutex
+	mu             sync.RWMutex
 	percentile     float64
 	windowSlide    time.Duration                 //滑动窗口滑动距离
 	windowSize     time.Duration                 //滑动窗口大小
@@ -119,8 +119,8 @@ func (o *Stats) triggerLoop() {
 
 //GetAccessCount ...
 func (o *Stats) GetAccessCount(key string) int {
-	o.mu.Lock()
-	defer o.mu.Unlock()
+	o.mu.RLock()
+	defer o.mu.RUnlock()
 	if o.counter == nil {
 		return 0
 	}
